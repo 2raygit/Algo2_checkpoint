@@ -1,0 +1,27 @@
+ALGORITHM Fibonacci
+VAR
+    n: ENTIER
+    resultat: ENTIER
+
+PROCEDURE FibonacciRecursif(n: ENTIER) RETOURNE ENTIER
+    BEGIN
+        SI n = 0 ALORS
+            RETOUR 0
+        SINON SI n = 1 ALORS
+            RETOUR 1
+        SINON
+            RETOUR FibonacciRecursif(n - 1) + FibonacciRecursif(n - 2)
+        FIN SI
+    END
+
+BEGIN
+    // Demander à l'utilisateur de saisir la valeur de n
+    ECRIRE "Veuillez entrer la position n pour la séquence de Fibonacci :"
+    LIRE n
+
+    // Calculer le nième nombre de Fibonacci en utilisant la fonction récursive
+    resultat = FibonacciRecursif(n)
+
+    // Afficher le résultat
+    ECRIRE "Le ", n, "ème nombre de Fibonacci est : ", resultat
+END

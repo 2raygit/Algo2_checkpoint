@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Saisissez la température</h1>
+    <button onclick="demanderTemp()">Saisir la température</button>
+    <p id="habit"></p>
+    <script>
+
+function DemanderTemperature(temp){
+    switch(true){
+        case (temp < 10):
+            return "très froid";
+        case (temp >= 10 && temp < 20):
+            return "froid";
+        case (temp >= 20 && temp < 30):
+            return "chaud";  
+        case (temp >= 30) :
+            return "très chaud";
+        default : 
+            return "température invalide";
+    }
+}
+
+function demanderTemp(){
+    let AskTemp = prompt ("Saisissez la température :");
+    let temp = parseInt(AskTemp);
+    let habit = document.getElementById("habit");
+    if(isNaN(temp)){
+        habit.textContent= "Température invalide";
+    }
+    else if(temp < 10){
+        habit.textContent= "Portez un habit d'hiver";
+    }
+    else if(temp < 20){
+        habit.textContent= "Portez un habit long";
+    }
+    else if(temp < 30){
+        habit.textContent= "Portez un habit décontracté";
+    }
+    else{
+        habit.textContent= "Portez un habit d'été";
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+ALGORITHM TarificationDesBillets
+VAR
+    age: ENTIER
+    prix: ENTIER
+
+BEGIN
+    // Demander à l'utilisateur de saisir son âge
+    ECRIRE "Veuillez entrer votre âge :"
+    LIRE age
+
+    // Déterminer le prix du billet en fonction de l'âge
+    SI age <= 12 ALORS
+        prix = 10
+    SINON SI age >= 13 ET age <= 17 ALORS
+        prix = 15
+    SINON
+        prix = 20
+    FIN SI
+
+    // Afficher le prix du billet
+    ECRIRE "Le prix de votre billet est : ", prix, " $"
+END

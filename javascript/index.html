@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo algo</title>
+</head>
+<body>
+
+<h1> veillez saisir votre age ?</h1>
+<button onclick="DemanderAge()"> saisir l'age</button>
+<h1 id="ticket"> </h1>
+    <script>
+
+function PrixBillet(age){
+
+    switch(true){
+    case (age < 12):
+        return 10 ;
+    case (age > 13 &&  age < 17):
+        return 15 ;
+    case (age > 18):
+        return 20 ;
+    default : return "age invalide ";
+}   
+}
+function DemanderAge(){
+let agePersonne = prompt("saisissez votre age !");
+ age =parseInt(agePersonne);
+
+ const billet = PrixBillet(age);
+
+ let ticketPrice = document.getElementById("ticket");
+ if ( billet === "age invalide "){
+    ticketPrice.textContent= "age invalide ";
+ }else{
+        
+        ticketPrice.textContent =` le prix du billet est ${billet} $`; 
+    }
+}
+
+
+</script>
+</body>
+</html>

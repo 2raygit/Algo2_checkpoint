@@ -1,0 +1,34 @@
+ALGORITHM ConseillerVestimentaire
+VAR
+    temperature: ENTIER
+    pleut: CHAINE
+    message: CHAINE
+
+BEGIN
+    // Demander à l'utilisateur de saisir la température actuelle
+    ECRIRE "Quelle est la température actuelle en degrés Celsius ?"
+    LIRE temperature
+
+    // Demander à l'utilisateur s'il pleut ou non
+    ECRIRE "Est-ce qu'il pleut actuellement ? (oui/non)"
+    LIRE pleut
+
+    // Conseiller l'utilisateur sur les vêtements à porter en fonction de la température et de la pluie
+    SI temperature < 0 ALORS
+        message = "Il fait très froid. Portez un manteau épais, des gants, une écharpe et un bonnet."
+    SINON SI temperature >= 0 ET temperature <= 10 ALORS
+        message = "Il fait froid. Portez un manteau, des gants et une écharpe."
+    SINON SI temperature > 10 ET temperature <= 20 ALORS
+        message = "Il fait frais. Portez une veste ou un pull."
+    SINON
+        message = "Il fait chaud. Portez des vêtements légers."
+    FIN SI
+
+    // Ajouter des conseils en cas de pluie
+    SI pleut = "oui" ALORS
+        message = message + " N'oubliez pas de prendre un parapluie ou un imperméable."
+    FIN SI
+
+    // Afficher le conseil vestimentaire
+    ECRIRE message
+END
